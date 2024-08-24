@@ -1,5 +1,7 @@
+### NAME: GOWRISANKAR P
+### REG NO: 212222230041
+### DATE: 
 # Ex.No: 01 PLOT A TIME SERIES DATA
-###  Date: 16-02-2024
 
 # AIM:
 To Develop a python program to Plot a time series data (population/ market price of a commodity
@@ -13,63 +15,26 @@ To Develop a python program to Plot a time series data (population/ market price
 # PROGRAM:
 ## Population:
 
-```python
-import matplotlib.pyplot as plt
+```AGE
 import pandas as pd
-df=pd.read_csv("POPTHM.csv",parse_dates=["DATE"],index_col="DATE")
-df.head()
-df_filtered = df["2000":"2023"]
-annual_mean = df_filtered.resample('Y').mean()
-mean = annual_mean.plot(kind='line')
-plt.xlabel("Year")
-plt.ylabel("Population (in Thousands)")
-plt.title("Average Annual Population (2000-2023)")
-plt.show()
-```
-# Market Price:
-```python
 import matplotlib.pyplot as plt
-import pandas as pd
-df=pd.read_csv("trainset.csv",parse_dates=["Date"],index_col="Date")
-df.head()
-df.Close.resample('M').mean()
-mean=df.Close.resample('M').mean().plot(kind='line')
-plt.xlabel("Month")
-plt.ylabel("Price")
+file_path = 'MentalHealthSurvey.csv'
+data = pd.read_csv(file_path)
+mean_sleep = data['age'].mean()
+plt.figure(figsize=(10, 6))
+plt.plot(data['age'], label='Age', color='blue')
+plt.xlabel('Respondent (Sequential Order)')
+plt.ylabel('Average AGE')
+plt.title('Average Age - Sequential Plot')
+plt.legend()
 plt.show()
-mean=df.Close.resample('Y').mean().plot(kind='line')
-plt.xlabel("Year")
-plt.ylabel("Price")
-plt.show()
-```
-# Temperature:
-```python
-import matplotlib.pyplot as plt
-import pandas as pd
-df=pd.read_csv("DailyDelhiClimateTrain.csv",parse_dates=["date"],index_col="date")
-df.head()
-mean=df["meantemp"].resample('M').mean().plot(kind='line')
-plt.xlabel("Month")
-plt.ylabel("Temperature")
-plt.show()
+
 ```
 
 
 # OUTPUT:
-## Population:
-
-![OUT](https://github.com/JEEVAABI/TSA_EXP1/assets/93427098/fade9281-68b0-4f19-93bc-92660324c9dc)
-# Market Price:
-
-![2 (1)](https://github.com/JEEVAABI/TSA_EXP1/assets/93427098/5bccb008-4a74-4afd-b810-224c61675b9c)
-# Temperature:
-
-![4 (1)](https://github.com/JEEVAABI/TSA_EXP1/assets/93427098/dbef86e7-56d2-4d1d-be20-36cd57353f62)
-
-
-
-
-
+## Age:
+![image](https://github.com/user-attachments/assets/8d5fee74-b877-4ad0-83f0-e2c457aa196a)
 
 # RESULT:
 Thus we have created the Python code for plotting the time series of given data.
